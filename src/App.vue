@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <TheMap
+      ref = ""
+      apiKey="VS1qIY9VyCItiEKLqgcq_C2q5WrEk7v2BgIkL2shyGU"></TheMap>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheMap from './components/TheMap.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TheMap
+  },
+  mounted() {
+    let map = this.$refs.map;
+    map.dropMarker({ lat: 37.11, lng: -121.11 });
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+body {
+  margin: 0;
 }
+
 </style>
